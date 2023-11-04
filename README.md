@@ -39,14 +39,8 @@ db.usuarios.insertMany([
       nombre: "maria",
       apellido: "limpieza",
       correo: "hot@gmail.com",
-      puntoTrabajo: {
-        pais: 'Colombia',
-        departamento: 'santander',
-        ciudad: 'asdasdasd',
-        direccion: 'cra 32 #soad punto de servientrega numero 12'
-      },
       password: "963",
-      rol: 'cliente',
+      rol: 'empleado',
       permisos: {
           "/empleado": ["1.0.0","1.0.1","1.0.2","1.0.3,1.0.4","1.0.5","1.0.6","1.0.7"]
         }
@@ -55,14 +49,8 @@ db.usuarios.insertMany([
       nombre: "damara",
       apellido: "cocina",
       correo: "cocina@gmail.com",
-      puntoTrabajo: {
-        pais: 'Colombia',
-        departamento: 'bolivar',
-        ciudad: 'cartagena',
-        direccion: 'calle 33 #24-25, punto de servientrega numero 60'
-      },
       password: "963",
-      rol: 'cliente',
+      rol: 'empleado',
       permisos: {
           "/empleado": ["1.0.0","1.0.1","1.0.2","1.0.3,1.0.4","1.0.5","1.0.6","1.0.7"]
         }
@@ -71,14 +59,8 @@ db.usuarios.insertMany([
       nombre: "pedro",
       apellido: "ramirez",
       correo: "pedro@gmail.com",
-      puntoTrabajo: {
-        pais: 'Colombia',
-        departamento: 'boyaca',
-        ciudad: 'asffhfghdf',
-        direccion: 'calle 32 #25-34, punto de servientrega numero 85'
-      },
       password: "963",
-      rol: 'cliente',
+      rol: 'empleado',
       permisos: {
           "/empleado": ["1.0.0","1.0.1","1.0.2","1.0.3,1.0.4","1.0.5","1.0.6","1.0.7"]
         }
@@ -114,9 +96,7 @@ db.paquete.insertMany([
     codigoFactura: '9876543210',
     tipo: 'mercancia',
     pesoKg: 5,
-    contenido: 'sombreros',
-    distanciaActualKm: 56,
-    tiempoEstimadoEnHoras: 10, 
+    contenido: 'sombreros', 
     ubiActual: {
       pais: 'Colombia',
       departamento: 'bolivar',
@@ -135,8 +115,7 @@ db.paquete.insertMany([
       ciudad: 'asdasdasd',
       direccion: 'cra 32 #soad punto de servientrega numero 12'
     },
-    estado: 'estatico',
-    ultimoDestino: false
+    estado: 'estatico'
   },
   {
     remitente: {
@@ -156,8 +135,6 @@ db.paquete.insertMany([
     tipo: 'mercancia',
     pesoKg: 25,
     contenido: 'papel',
-    distanciaActualKm: 91,
-    tiempoEstimadoEnHoras: 16, 
     ubiActual: {
       pais: 'Colombia',
       departamento: 'boyaca',
@@ -176,8 +153,7 @@ db.paquete.insertMany([
       ciudad: 'asdasdasd',
       direccion: 'cra 32 #soad punto de servientrega numero 12'
     },
-    estado: 'en camino',
-    ultimoDestino: false
+    estado: 'en camino'
   }
 ])
 
@@ -186,23 +162,17 @@ db.factura.insertMany([
   {
     codigoPaquete: '9876543210',
     tipoPago: 'efectivo',
-    entregado: 'en proceso',
-    tiempoTotalEsperaEnHoras: 72,
-    totalEnvio: '367.000'
+    entregado: 'en proceso'
   },
   {
     codigoPaquete: '1587556626',
     tipoPago: 'efectivo',
-    entregado: 'en proceso',
-    tiempoTotalEsperaEnHoras: 65,
-    totalEnvio: '250.000'
+    entregado: 'en proceso'
   },
   {
     codigoPaquete: '213142341',
     tipoPago: 'tarjeta de credito',
-    entregado: 'entregado',
-    tiempoTotalEsperaEnHoras: 65,
-    totalEnvio: '250.000'
+    entregado: 'entregado'
   }
 ])
 ```
@@ -270,62 +240,62 @@ Authorization:   Bearer sjahdiuashdiuahsodijsaoijdsioajdoijdoiasjdoijasoijdoiaso
 ```sql
 # Consulta realizada ....
 ```
+Get
 
+1.0.0
 
+http://127.10.11.12:4012/servientrega/admin
 
+Get
 
+1.0.1
 
+http://127.10.11.12:4012/servientrega/admin
 
+Get
 
+1.0.2
 
+http://127.10.11.12:4012/servientrega/admin
 
+Get
 
-Para calcular el costo de envío de un paquete, generalmente se toman en cuenta varios factores, como la distancia, el peso y la tarifa por kilómetro. En este caso, tienes la distancia de 602 km y el peso del paquete de 10 kg, y quieres que el costo sea de 367.000 pesos colombianos. Para calcular la tarifa por kilómetro necesaria para alcanzar ese costo, puedes usar la siguiente fórmula:
+1.0.3
 
-Costo total = Tarifa por kilómetro * Distancia
+http://127.10.11.12:4012/servientrega/admin
 
-Dado que tienes el costo total y la distancia, puedes despejar la tarifa por kilómetro de la siguiente manera:
+Post
 
-Tarifa por kilómetro = Costo total / Distancia
+1.0.0
 
-Sustituyendo los valores que proporcionaste:
+http://127.10.11.12:4012/servientrega/admin
 
-Tarifa por kilómetro = 367,000 / 602 = 609.302 pesos colombianos por kilómetro
+Post
 
-Por lo tanto, necesitas establecer una tarifa de aproximadamente 609.302 pesos colombianos por kilómetro para que el costo de envío del paquete de 10 kg a una distancia de 602 km sea de 367.000 pesos colombianos. Ten en cuenta que este cálculo es simplista y no tiene en cuenta otros factores que podrían afectar el costo real del envío, como los costos operativos, los impuestos, etc.
+1.0.1
 
+http://127.10.11.12:4012/servientrega/admin
 
+Put
 
+1.0.0
 
-User
-ahora supongamos que la distancia a recorrer es de 503 km y un paquete pesa 12kg, cuanto me va a cotizar en pesos colombianos por esa distancia y peso
+http://127.10.11.12:4012/servientrega/admin
 
-Para calcular el costo de envío para una distancia de 503 km y un paquete que pesa 12 kg, puedes utilizar la misma fórmula:
+Put
 
-Costo total = Tarifa por kilómetro * Distancia
+1.0.1
 
-Dado que ya sabes que la tarifa por kilómetro es de 609.302 pesos colombianos por kilómetro (según el cálculo anterior), puedes calcular el costo total de la siguiente manera:
+http://127.10.11.12:4012/servientrega/admin
 
-Costo total = 609.302 pesos/km * 503 km = 307,150.006 pesos colombianos
+Delete
 
-Entonces, el costo de envío para un paquete que pesa 12 kg y debe recorrer una distancia de 503 km sería de aproximadamente 307,150.006 pesos colombianos. Ten en cuenta que este cálculo se basa en la tarifa por kilómetro que calculaste previamente y no incluye otros posibles costos adicionales.
+1.0.0
 
-Para calcular el costo de envío basado en el tiempo estimado de entrega, necesitarás conocer la tarifa por hora de entrega. Supongamos que la tarifa por hora es de "X" pesos colombianos por hora.
+http://127.10.11.12:4012/servientrega/admin
 
-Dado que estimas que el paquete demora 72 horas en entregarse, puedes calcular el costo total de envío de la siguiente manera:
+Delete
 
-Costo total = Tarifa por hora * Tiempo estimado de entrega
+1.0.1
 
-En este caso:
-
-Costo total = X pesos/hora * 72 horas = 72X pesos colombianos
-
-Ahora, tienes que igualar este costo total al costo del paquete, que es de 307,150.006 pesos colombianos:
-
-72X = 307,150.006
-
-Para despejar "X" (la tarifa por hora), puedes dividir ambos lados de la ecuación por 72:
-
-X = 307,150.006 / 72 ≈ 4,265.972 pesos colombianos por hora
-
-Entonces, con una tarifa de aproximadamente 4,265.972 pesos colombianos por hora, el costo total del envío del paquete de 307,150.006 pesos colombianos se calcularía en función del tiempo estimado de entrega de 72 horas. Ten en cuenta que este cálculo se basa en suposiciones y no incluye otros factores que podrían influir en la tarifa real del envío, como los costos operativos, los impuestos, etc.
+http://127.10.11.12:4012/servientrega/admin

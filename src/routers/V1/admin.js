@@ -10,9 +10,9 @@ const version = routesVersioning();
 
 router.use(passportHelper.authenticate('bearer', {session: false}));
 
-router.get('/', version({'1.0.0': validate(Usuarios.getUsers)},{'1.0.2': validate(Paquete.getPaquetes)},{'1.0.3': validate(Paquete.getPaquetePorCodigoFactura)}))
+router.get('/', version({'1.0.0': validate(Usuarios.getUsers)},{'1.0.1': validate(Usuarios.getUsersCorreo)},{'1.0.2': validate(Paquete.getPaquetes)},{'1.0.3': validate(Paquete.getPaquetePorCodigoFactura)}))
 
-router.post('/', version({'1.0.0': validate(Usuarios.postUsuarios)},{'1.0.1': validate(Paquete.postPaquete)},{'1.0.2': validate(Usuarios.getUsersCorreo)}))
+router.post('/', version({'1.0.0': validate(Usuarios.postUsuarios)},{'1.0.1': validate(Paquete.postPaquete)}))
 
 router.put('/', version({'1.0.0': validate(Usuarios.putUsuarios)},{'1.0.1': validate(Paquete.putPaquete)}))
 
