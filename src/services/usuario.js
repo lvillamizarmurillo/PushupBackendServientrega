@@ -2,7 +2,7 @@ import db from '../config/dbconnect.js'
 import { validationResult } from 'express-validator';
 import { DTO } from '../middleware/controllers/registro.js';
 
-const usuario = await db.getconnection().nombreTabla('usuario').conectar();
+const usuario = await db.getconnection().nombreTabla('usuarios').conectar();
 
 export default class Usuario{
     static async postUsuarios(req,res){
@@ -27,13 +27,21 @@ export default class Usuario{
     }
     static async getUsers(req,res){
         if(!req.rateLimit) return;
-        const data = await usuario.findOne({});
+        const data = await usuario.aggregate([
+            {
+                $match: {}
+            }
+        ]).toArray();
         res.status(200).send({status: 200, message: data});
     }
     static async getUsersCorreo(req,res){
-        if(!req.rateLimit) return;
+        console.log("hola");
         if (!req.body.correo) return status(400).send({status: 400, message: "No se puede buscar, verifica el correo del usuario."})
-        const data = await usuario.findOne({correo: req.body.correo});
+        const data = await usuario.agreggate([
+            {
+                $match: {correo: req.body.correo}
+            }
+        ]).toArray();
         res.status(200).send({status: 200, message: data});
     }
     static async putUsuarios(req,res){

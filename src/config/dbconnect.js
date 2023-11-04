@@ -4,8 +4,8 @@ import dotenv from 'dotenv/config'
 export default class Connect{
     static instancia;
     dbMongo = new MongoClient(process.env.MONGO_URI);
-    dbnombre = 'usuario';
-    dbcoleccion = 'producion';
+    dbnombre = 'usuarios';
+    dbcoleccion = 'servientrega';
     db;
 
     static getconnection(){

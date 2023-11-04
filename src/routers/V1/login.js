@@ -2,6 +2,7 @@ import { crearToken } from '../../middleware/jwt.js';
 import { Router } from 'express';
 import routesVersioning from 'express-routes-versioning';
 import { loginUsuario } from '../../services/login.js';
+import { validate } from '../../validation/validaciones.js';
 
 const router = Router();
 const version = routesVersioning();

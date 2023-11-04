@@ -6,9 +6,8 @@ passport.use( new BearerStrategy(
     { passReqToCallback: true },
     async function (req,token,done){
         const usuario = await verificarToken(req,token);
-        if (!usuario) return done(null,false);
-        return done(null, usuario);
-    }
-));
+        if (!usuario) return done(null, false)
+        done(null,usuario)
+    }));
 
 export default passport;

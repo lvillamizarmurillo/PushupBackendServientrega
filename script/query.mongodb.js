@@ -127,22 +127,16 @@ db.factura.insertMany([
   {
     codigoPaquete: '9876543210',
     tipoPago: 'efectivo',
-    entregado: 'en proceso',
-    tiempoTotalEsperaEnHoras: 72,
-    totalEnvio: '367.000'
+    entregado: 'en proceso'
   },
   {
     codigoPaquete: '1587556626',
     tipoPago: 'efectivo',
-    entregado: 'en proceso',
-    tiempoTotalEsperaEnHoras: 65,
-    totalEnvio: '250.000'
+    entregado: 'en proceso'
   },
   {
     codigoPaquete: '213142341',
     tipoPago: 'tarjeta de credito',
-    entregado: 'entregado',
-    tiempoTotalEsperaEnHoras: 65,
-    totalEnvio: '250.000'
+    entregado: 'entregado'
   }
 ])
