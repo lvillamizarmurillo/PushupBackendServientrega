@@ -4,14 +4,8 @@ db.usuarios.insertMany([
       nombre: "maria",
       apellido: "limpieza",
       correo: "hot@gmail.com",
-      puntoTrabajo: {
-        pais: 'Colombia',
-        departamento: 'santander',
-        ciudad: 'asdasdasd',
-        direccion: 'cra 32 #soad punto de servientrega numero 12'
-      },
       password: "963",
-      rol: 'cliente',
+      rol: 'empleado',
       permisos: {
           "/empleado": ["1.0.0","1.0.1","1.0.2","1.0.3,1.0.4","1.0.5","1.0.6","1.0.7"]
         }
@@ -20,14 +14,8 @@ db.usuarios.insertMany([
       nombre: "damara",
       apellido: "cocina",
       correo: "cocina@gmail.com",
-      puntoTrabajo: {
-        pais: 'Colombia',
-        departamento: 'bolivar',
-        ciudad: 'cartagena',
-        direccion: 'calle 33 #24-25, punto de servientrega numero 60'
-      },
       password: "963",
-      rol: 'cliente',
+      rol: 'empleado',
       permisos: {
           "/empleado": ["1.0.0","1.0.1","1.0.2","1.0.3,1.0.4","1.0.5","1.0.6","1.0.7"]
         }
@@ -36,14 +24,8 @@ db.usuarios.insertMany([
       nombre: "pedro",
       apellido: "ramirez",
       correo: "pedro@gmail.com",
-      puntoTrabajo: {
-        pais: 'Colombia',
-        departamento: 'boyaca',
-        ciudad: 'asffhfghdf',
-        direccion: 'calle 32 #25-34, punto de servientrega numero 85'
-      },
       password: "963",
-      rol: 'cliente',
+      rol: 'empleado',
       permisos: {
           "/empleado": ["1.0.0","1.0.1","1.0.2","1.0.3,1.0.4","1.0.5","1.0.6","1.0.7"]
         }
@@ -79,9 +61,7 @@ db.paquete.insertMany([
     codigoFactura: '9876543210',
     tipo: 'mercancia',
     pesoKg: 5,
-    contenido: 'sombreros',
-    distanciaActualKm: 56,
-    tiempoEstimadoEnHoras: 10, 
+    contenido: 'sombreros', 
     ubiActual: {
       pais: 'Colombia',
       departamento: 'bolivar',
@@ -100,8 +80,7 @@ db.paquete.insertMany([
       ciudad: 'asdasdasd',
       direccion: 'cra 32 #soad punto de servientrega numero 12'
     },
-    estado: 'estatico',
-    ultimoDestino: false
+    estado: 'estatico'
   },
   {
     remitente: {
@@ -121,8 +100,6 @@ db.paquete.insertMany([
     tipo: 'mercancia',
     pesoKg: 25,
     contenido: 'papel',
-    distanciaActualKm: 91,
-    tiempoEstimadoEnHoras: 16, 
     ubiActual: {
       pais: 'Colombia',
       departamento: 'boyaca',
@@ -141,8 +118,7 @@ db.paquete.insertMany([
       ciudad: 'asdasdasd',
       direccion: 'cra 32 #soad punto de servientrega numero 12'
     },
-    estado: 'en camino',
-    ultimoDestino: false
+    estado: 'en camino'
   }
 ])
 
